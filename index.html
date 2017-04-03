@@ -50,6 +50,21 @@
             when using a remote server, your command will be<br />
             <code>git clone username@host:/path/to/repository</code>
         </p>
+        <hr>
+        <h2>athena sparse checkout</h2>
+        <p>
+            The ATLAS athena repository is too large to clone and compile as a whole. Instead, it's possible to do a sparse checkout of individual athena packages, and simply compile those. This must be done within the atlas software environment:<br>
+            <code>
+                setupATLAS <br />
+                lsetup git <br />
+                git atlas init-workdir ssh://git@gitlab.cern.ch:7999/atlas/athena.git
+            </code><br>
+            No packages have been checked out yet, though will also setup your fork as <code>origin</code> and the main repository as <code>upstream</code>! <br> To develop for a package, check it out specifically:<br>
+            <code>
+                cd athena <br />
+                git atlas addpkg PixelCabling
+            </code>
+        </p>
     </div>
     <a name="trees"></a>
     <div class="scrollblock block-trees">
